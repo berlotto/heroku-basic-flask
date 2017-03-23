@@ -1,0 +1,29 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}Resultados{% endblock %}
+
+{% block content %}
+<div class="container">
+<h1>Total</h1>
+
+<h2>Zumbi: ${{total_zumbi}},00 </h2>
+<h2>Olimpíadas: ${{total_olimpiadas}},00 </h2>
+
+<h1>Votos</h1>
+
+<table class="table table-condensed">
+<tr>
+    <th>Investidor</th>
+    <th>Investido em Zumbi</th>
+    <th>Investido em Olimpiadas</th>
+</tr>
+{%for voto in votos%}
+<tr>
+    <td>{{voto.nome}}({{voto.patrulha}})</td>
+    <td>{{voto.zumbi}}</td>
+    <td>{{voto.olimpiadas}}</td>
+</tr>
+{%endfor%}
+</table>
+</div>
+
+{%endblock%}
