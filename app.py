@@ -1,12 +1,19 @@
-from flask import Flask, render_template, request, flash, redirect
+from flask import Flask, render_template, request, flash, redirect, send_from_directory
 from tinydb import TinyDB
 import functools
+import os
 
 app = Flask(__name__)
 
 db = TinyDB('database.json')
 tabela = db.table("investimentos")
 app.secret_key = 'some_secret'
+
+
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+                            'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 
 @app.route("/")
