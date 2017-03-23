@@ -1,13 +1,23 @@
-{% extends "bootstrap/base.html" %}
-{% block title %}This is an example page{% endblock %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-{%block styles%}
-{{super()}}
-<link href="{{url_for('.static', filename='index.css')}}" rel="stylesheet">
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-{%endblock%}
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-{% block content %}
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <link href="{{url_for('.static', filename='index.css')}}" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+</head>
+<body>
+
+
 <div class="container">
       <div class="header clearfix">
         <nav>
@@ -78,10 +88,8 @@
       </footer>
 
     </div> <!-- /container -->
-{% endblock %}
 
-{%block scripts%}
-{{super()}}
+
 <script type="text/javascript">
     $("#transferir").click(function(e){
         var nome = $("[name=nome]").val();
@@ -108,4 +116,6 @@
         e.preventDefault();
     });
 </script>
-{%endblock%}
+
+</body>
+</html>
