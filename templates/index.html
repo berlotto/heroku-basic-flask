@@ -105,24 +105,29 @@
 
 <script type="text/javascript">
     $("#transferir").click(function(e){
+        $(this).prop("disabled",true);
         var nome = $("[name=nome]").val();
         var patrulha = $("[name=patrulha]").val();
         var zumbi = $("[name=zumbi]").val();
         var olimpiadas = $("[name=olimpiadas]").val();
         if($.trim(nome) == '') {
             alert("Voce precisa informar o seu nome.");
+            $(this).prop("disabled",false);
             return false;
         }else
         if($.trim(patrulha) == '') {
             alert("Voce precisa informar o sua patrulha.");
+            $(this).prop("disabled",false);
             return false;
         }else
         if(parseInt(zumbi) + parseInt(olimpiadas) > 1000){
             alert("Os valores somados não podem passar de 1.000. Verifique!");
+            $(this).prop("disabled",false);
             return false;
         }else
         if(parseInt(zumbi) + parseInt(olimpiadas) < 1000){
             alert("É necessário você investir TODO o seu dinheiro.");
+            $(this).prop("disabled",false);
             return false;
         }
         $("#investimentos").submit();
